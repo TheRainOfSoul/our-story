@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Մեր սիրո պատմությունը</title>
+    <meta name="description" content="Մեր ամենաթանկարժեք պահերի հավաքածու - լուսանկարներ և տեսանյութեր">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Մեր սիրո պատմությունը">
+    <meta property="og:description" content="Մեր ամենաթանկարժեք պահերի հավաքածու">
+    <meta property="og:url" content="/">
+    
+    <!-- Apple Touch Icon -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Մեր սիրո պատմությունը">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#f43f5e">
+    <meta name="msapplication-navbutton-color" content="#f43f5e">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#f43f5e">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fef3c7 100%);
+            min-height: 100vh;
+        }
+        
+        /* Utility classes */
+        .hidden { display: none; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-around { justify-content: space-around; }
+        .text-center { text-align: center; }
+        .cursor-pointer { cursor: pointer; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .fixed { position: fixed; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+        .w-full { width: 100%; }
+        .h-full { height: 100%; }
+        .min-h-screen { min-height: 100vh; }
+        .max-w-md { max-width: 28rem; }
+        .max-w-lg { max-width: 32rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
+        .p-3 { padding: 0.75rem; }
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+        .pb-20 { padding-bottom: 5rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-full { border-radius: 9999px; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .overflow-hidden { overflow: hidden; }
+        .object-cover { object-fit: cover; }
+        .transition-all { transition: all 0.3s ease; }
+        .transition-transform { transition: transform 0.3s ease; }
+        .transition-opacity { transition: opacity 0.3s ease; }
+        .opacity-0 { opacity: 0; }
+        .opacity-100 { opacity: 1; }
+        .z-50 { z-index: 50; }
+        .z-9999 { z-index: 9999; }
+        
+        /* Grid system */
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .gap-4 { gap: 1rem; }
+        .gap-8 { gap: 2rem; }
+        
+        /* Aspect ratios */
+        .aspect-square { aspect-ratio: 1 / 1; }
+        .aspect-video { aspect-ratio: 16 / 9; }
+        .aspect-4-3 { aspect-ratio: 4 / 3; }
+        
+        /* Colors */
+        .text-rose-600 { color: #e11d48; }
+        .text-rose-800 { color: #9f1239; }
+        .text-gray-600 { color: #4b5563; }
+        .text-white { color: #ffffff; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-xs { font-size: 0.75rem; }
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .font-medium { font-weight: 500; }
+        .italic { font-style: italic; }
+        
+        /* Backgrounds */
+        .bg-white { background-color: #ffffff; }
+        .bg-rose-50 { background-color: #fff1f2; }
+        .bg-rose-600 { background-color: #e11d48; }
+        .bg-gradient-to-br { background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)); }
+        .from-rose-50 { --tw-gradient-from: #fff1f2; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 241, 242, 0)); }
+        .via-pink-50 { --tw-gradient-stops: var(--tw-gradient-from), #fdf2f8, var(--tw-gradient-to, rgba(253, 242, 248, 0)); }
+        .to-amber-50 { --tw-gradient-to: #fffbeb; }
+        
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(244, 63, 94, 0.2);
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(244, 63, 94, 0.2);
+            z-index: 50;
+        }
+        
+        .nav-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: #4b5563;
+        }
+        
+        .nav-button.active {
+            color: #e11d48;
+            background-color: #fff1f2;
+        }
+        
+        .nav-button:hover {
+            color: #f43f5e;
+        }
+        
+        /* Photo grid */
+        .photo-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+            transition: background 0.3s ease;
+        }
+        
+        .photo-item:hover .photo-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+        }
+        
+        /* Collection items */
+        .collection-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .collection-item:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .collection-item:active {
+            transform: scale(0.95);
+        }
+        
+        .collection-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+        }
+        
+        .collection-icon {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            width: 2rem;
+            height: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .collection-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.75rem;
+        }
+        
+        .collection-title {
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .collection-meta {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.75rem;
+        }
+        
+        /* Play button */
+        .play-button {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .play-icon {
+            width: 3rem;
+            height: 3rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease;
+        }
+        
+        .collection-item:hover .play-icon {
+            transform: scale(1.1);
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+        
+        .lightbox img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 0.5rem;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.25rem;
+            color: #374151;
+        }
+        
+        /* Responsive */
+        @media (min-width: 640px) {
+            .sm\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .animate-fade-in-scale {
+            animation: fadeInScale 0.6s ease-out;
+        }
+        
+        .animate-delay-1 { animation-delay: 0.1s; }
+        .animate-delay-2 { animation-delay: 0.2s; }
+        .animate-delay-3 { animation-delay: 0.3s; }
+        .animate-delay-4 { animation-delay: 0.4s; }
+        .animate-delay-5 { animation-delay: 0.5s; }
+        .animate-delay-6 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Main App Container -->
+    <div id="app">
+        <!-- Home Page -->
+        <div id="home-page" class="page">
+            <!-- Header -->
+            <div class="text-center py-8 px-4 animate-fade-in-up">
+                <h1 class="text-3xl font-bold text-rose-800 mb-2">Մեր սիրո պատմությունը</h1>
+                <p class="text-rose-600">Մեր ամենաթանկարժեք պահերի հավաքածու</p>
+            </div>
+
+            <!-- Featured Photos and Quotes -->
+            <div class="px-4 space-y-8">
+                <!-- Photo 1 -->
+                <div class="animate-fade-in-scale">
+                    <div class="photo-item" onclick="openLightbox('photo/2023-08-18 16-02-41.JPG', 'Գեղեցիկ մայրամուտ')">
+                        <img src="photo/2023-08-18 16-02-41.JPG" alt="Գեղեցիկ մայրամուտ">
+                        <div class="photo-overlay"></div>
+                    </div>
+                    <div class="card p-6 mb-8 mt-6 animate-fade-in-up animate-delay-1">
+                        <p class="text-rose-800 italic text-center text-lg">"Դու իմ այսօրն ես և իմ բոլոր վաղվանները: Քեզ հետ ամեն օր հատուկ է դառնում:"</p>
+                        <div class="flex justify-center mt-3">
+                            <div style="width: 2rem; height: 2px; background: #fda4af; border-radius: 9999px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="animate-fade-in-scale animate-delay-2">
+                    <div class="photo-item" onclick="openLightbox('photo/2023-06-24 20-24-37.JPG', 'Սիրական ընթրիք')">
+                        <img src="photo/2023-06-24 20-24-37.JPG" alt="Սիրային ընթրիք">
+                        <div class="photo-overlay"></div>
+                    </div>
+                    <div class="card p-6 mb-8 mt-6 animate-fade-in-up animate-delay-3">
+                        <p class="text-rose-800 italic text-center text-lg">"Ամբողջ աշխարհում իմ համար քո նման հրաշք չկա: Դու իմ միակն ես:"</p>
+                        <div class="flex justify-center mt-3">
+                          <div style="width: 2rem; height: 2px; background: #fda4af; border-radius: 9999px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="animate-fade-in-scale animate-delay-4">
+                    <div class="photo-item" onclick="openLightbox('photo/2025-06-04 15-09-11_1749035421122.JPG', 'Միասին ընդմիշտ')">
+                        <img src="photo/2025-06-04 15-09-11_1749035421122.JPG" alt="Միասին ընդմիշտ">
+                        <div class="photo-overlay"></div>
+                    </div>
+                    <div class="card p-6 mb-8 mt-6 animate-fade-in-up animate-delay-5">
+                        <p class="text-rose-800 italic text-center text-lg">"Ամեն սիրո պատմություն գեղեցիկ է, բայց մերը՝ իմ ամենասիրելին է:"</p>
+                        <div class="flex justify-center mt-3">
+                            <div style="width: 2rem; height: 2px; background: #fda4af; border-radius: 9999px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Videos -->
+            <section class="px-4 mb-8 mt-12 animate-fade-in-up animate-delay-6">
+                <h2 class="text-xl font-semibold text-rose-800 mb-4">Հատուկ տեսանյութեր</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="card overflow-hidden">
+                        <div class="relative aspect-video">
+                            <img src="photo/2023-05-03 01-57-19.JPG" alt="Մեր հարսանիքի օրը" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center" style="background: rgba(0, 0, 0, 0.2);">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: rgba(255, 255, 255, 0.9);">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <p class="text-rose-800 font-medium">Մեր հարսանիքի օրը</p>
+                        </div>
+                    </div>
+                    <div class="card overflow-hidden">
+                        <div class="relative aspect-video">
+                            <img src="photo/2023-07-18 22-00-39.JPG" alt="Տարեդարձի ճանապարհորդություն" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center" style="background: rgba(0, 0, 0, 0.2);">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: rgba(255, 255, 255, 0.9);">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <p class="text-rose-800 font-medium">Տարեդարձի ճանապարհորդություն</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final romantic message -->
+            <div class="px-4 mt-8 pb-20">
+                <div class="card p-8" style="background: linear-gradient(to right, rgba(255, 241, 242, 0.8), rgba(252, 231, 243, 0.8));">
+                    <p class="text-rose-800 text-center text-xl italic mb-4">
+                        "Դու իմ սիրտը ծիծաղել ես տալիս ամեն օր"
+                    </p>
+                    <div class="flex justify-center">
+                        <span style="color: #fb7185; font-size: 1.5rem;">💖</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photos Page -->
+        <div id="photos-page" class="page hidden">
+            <!-- Header -->
+            <div class="text-center py-8 px-4">
+                <h1 class="text-3xl font-bold text-rose-800 mb-2">Լուսանկարային հավաքածուներ</h1>
+                <p class="text-rose-600">Սեղմեք ցանկացած թղթապանակի վրա՝ ամբողջ հավաքածուն տեսնելու համար</p>
+            </div>
+
+            <!-- Photo Collections Grid -->
+            <div class="px-4 pb-20">
+                <div class="grid grid-cols-2 gap-4 max-w-lg mx-auto">
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/wedding-collection')">
+                        <img src="./photo/2023-05-03 01-57-19.JPG" alt="Հարսանիքի օր" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-icon">
+                            <span>📁</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Հարսանիքի օր</h3>
+                            <p class="collection-meta">127 լուսանկար</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/honeymoon-collection')">
+                        <img src="./photo/2023-05-10 07-27-38.JPG" alt="Մեղրամիս" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-icon">
+                            <span>📁</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Մեղրամիս</h3>
+                            <p class="collection-meta">89 լուսանկար</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/date-nights-collection')">
+                        <img src="./photo/2023-05-23 18-53-25.JPG" alt="Ժամադրությունների գիշերներ" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-icon">
+                            <span>📁</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Ժամադրությունների գիշերներ</h3>
+                            <p class="collection-meta">156 լուսանկար</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/vacations-collection')">
+                        <img src="./photo/2023-06-24 20-24-37.JPG" alt="Արձակուրդներ" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-icon">
+                            <span>📁</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Արձակուրդներ</h3>
+                            <p class="collection-meta">203 լուսանկար</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/everyday-collection')">
+                        <img src="./photo/2023-07-18 22-00-39.JPG" alt="Ամենայնապակ պահեր" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-icon">
+                            <span>📁</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Ամենայնապակ պահեր</h3>
+                            <p class="collection-meta">342 լուսանկար</p>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/special-occasions-collection')">
+                        <img src="./photo/2023-08-18 16-02-41.JPG" alt="Հատուկ առիթներ" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="collection-icon">
+                            <span>📁</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Հատուկ առիթներ</h3>
+                            <p class="collection-meta">78 լուսանկար</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Videos Page -->
+        <div id="videos-page" class="page hidden">
+            <!-- Header -->
+            <div class="text-center py-8 px-4">
+                <h1 class="text-3xl font-bold text-rose-800 mb-2">Տեսանյութային հավաքածուներ</h1>
+                <p class="text-rose-600">Սեղմեք ցանկացած թղթապանակի վրա՝ ամբողջ հավաքածուն տեսնելու համար</p>
+            </div>
+
+            <!-- Video Collections Grid -->
+            <div class="px-4 pb-20">
+                <div class="grid grid-cols-2 gap-4 max-w-lg mx-auto">
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/wedding-videos')">
+                        <img src="https://images.unsplash.com/photo-1465311530254-c4f4d0b7b0c4?w=400&h=400&fit=crop" alt="Հարսանիքի արարողություն" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="play-button">
+                            <div class="play-icon">
+                                <span class="text-rose-600 text-xl" style="margin-left: 2px;">▶</span>
+                            </div>
+                        </div>
+                        <div class="collection-icon">
+                            <span>🎬</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Հարսանիքի արարողություն</h3>
+                            <div class="flex justify-between collection-meta">
+                                <span>12 տեսանյութ</span>
+                                <span>2ժ 15ր</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/anniversary-videos')">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=400&fit=crop" alt="Տարեդարձի տոնակատարություններ" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="play-button">
+                            <div class="play-icon">
+                                <span class="text-rose-600 text-xl" style="margin-left: 2px;">▶</span>
+                            </div>
+                        </div>
+                        <div class="collection-icon">
+                            <span>🎬</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Տարեդարձի տոնակատարություններ</h3>
+                            <div class="flex justify-between collection-meta">
+                                <span>8 տեսանյութ</span>
+                                <span>45ր</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/travel-videos')">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop" alt="Ճանապարհորդական արկածներ" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="play-button">
+                            <div class="play-icon">
+                                <span class="text-rose-600 text-xl" style="margin-left: 2px;">▶</span>
+                            </div>
+                        </div>
+                        <div class="collection-icon">
+                            <span>🎬</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Ճանապարհորդական արկածներ</h3>
+                            <div class="flex justify-between collection-meta">
+                                <span>24 տեսանյութ</span>
+                                <span>3ժ 30ր</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/date-night-videos')">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=400&fit=crop" alt="Ժամադրությունների զվարճություն" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="play-button">
+                            <div class="play-icon">
+                                <span class="text-rose-600 text-xl" style="margin-left: 2px;">▶</span>
+                            </div>
+                        </div>
+                        <div class="collection-icon">
+                            <span>🎬</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Ժամադրությունների զվարճություն</h3>
+                            <div class="flex justify-between collection-meta">
+                                <span>15 տեսանյութ</span>
+                                <span>1ժ 20ր</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/daily-life-videos')">
+                        <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=400&h=400&fit=crop" alt="Ամենայնապակ կյանք" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="play-button">
+                            <div class="play-icon">
+                                <span class="text-rose-600 text-xl" style="margin-left: 2px;">▶</span>
+                            </div>
+                        </div>
+                        <div class="collection-icon">
+                            <span>🎬</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Ամենայնապակ կյանք</h3>
+                            <div class="flex justify-between collection-meta">
+                                <span>67 տեսանյութ</span>
+                                <span>4ժ 45ր</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="collection-item" onclick="openCollection('https://photos.google.com/share/special-messages')">
+                        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=400&h=400&fit=crop" alt="Հատուկ հաղորդագրություններ" class="w-full h-full object-cover">
+                        <div class="collection-overlay"></div>
+                        <div class="play-button">
+                            <div class="play-icon">
+                                <span class="text-rose-600 text-xl" style="margin-left: 2px;">▶</span>
+                            </div>
+                        </div>
+                        <div class="collection-icon">
+                            <span>🎬</span>
+                        </div>
+                        <div class="collection-info">
+                            <h3 class="collection-title">Հատուկ հաղորդագրություններ</h3>
+                            <div class="flex justify-between collection-meta">
+                                <span>5 տեսանյութ</span>
+                                <span>25ր</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="flex justify-around items-center py-2 px-4 max-w-md mx-auto">
+                <button class="nav-button active" onclick="showPage('home')" data-page="home">
+                    <span style="font-size: 1.125rem;">🏠</span>
+                    <span class="text-xs font-medium">Գլխավոր</span>
+                </button>
+                <button class="nav-button" onclick="showPage('photos')" data-page="photos">
+                    <span style="font-size: 1.125rem;">📸</span>
+                    <span class="text-xs font-medium">Լուսանկարներ</span>
+                </button>
+                <button class="nav-button" onclick="showPage('videos')" data-page="videos">
+                    <span style="font-size: 1.125rem;">🎬</span>
+                    <span class="text-xs font-medium">Տեսանյութեր</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Photo Lightbox -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content" onclick="event.stopPropagation()">
+                <button class="lightbox-close" onclick="closeLightbox()">×</button>
+                <img id="lightbox-image" src="" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            // Show selected page
+            document.getElementById(pageId + '-page').classList.remove('hidden');
+            
+            // Update navigation
+            const buttons = document.querySelectorAll('.nav-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+        }
+
+        // Lightbox functionality
+        function openLightbox(src, alt) {
+            const lightbox = document.getElementById('lightbox');
+            const image = document.getElementById('lightbox-image');
+            
+            image.src = src;
+            image.alt = alt;
+            lightbox.classList.add('open');
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('open');
+            
+            // Restore body scroll
+            document.body.style.overflow = '';
+        }
+
+        // Collection functionality
+        function openCollection(url) {
+            window.open(url, '_blank');
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                const currentPage = document.querySelector('.nav-button.active').dataset.page;
+                const pages = ['home', 'photos', 'videos'];
+                const currentIndex = pages.indexOf(currentPage);
+                
+                if (diff > 0 && currentIndex < pages.length - 1) {
+                    // Swipe left - next page
+                    showPage(pages[currentIndex + 1]);
+                } else if (diff < 0 && currentIndex > 0) {
+                    // Swipe right - previous page
+                    showPage(pages[currentIndex - 1]);
+                }
+            }
+        }
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show home page by default
+            showPage('home');
+            
+            // Add loading states for images
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+                
+                img.addEventListener('error', function() {
+                    this.style.opacity = '0.5';
+                    this.alt = 'Նկարը չի բեռնվել';
+                });
+            });
+        });
+    </script>
+
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+        <div style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fef3c7 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            z-index: 10000;
+        ">
+            <div style="font-size: 3rem; margin-bottom: 2rem;">💖</div>
+            <h1 style="color: #9f1239; font-size: 2rem; margin-bottom: 1rem;">Մեր սիրո պատմությունը</h1>
+            <p style="color: #e11d48; font-size: 1.1rem; max-width: 400px; line-height: 1.5;">
+                Այս կայքը պահանջում է JavaScript: Խնդրում ենք միացնել JavaScript-ը ձեր բրաուզերում:
+            </p>
+        </div>
+    </noscript>
+</body>
+</html>
